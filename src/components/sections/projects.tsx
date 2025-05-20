@@ -4,7 +4,35 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import { FiGithub, FiExternalLink, FiArrowRight, FiFilter, FiX } from 'react-icons/fi'
 
-const projects = [
+interface Project {
+  id: number
+  title: string
+  description: string
+  tags: string[]
+  github: string
+  demo: string
+  category: string
+  image: string
+  accentColor: string
+  featured: boolean
+}
+
+interface Category {
+  id: string
+  name: string
+}
+
+interface ProjectCardProps {
+  project: Project
+  onClick: () => void
+}
+
+interface ProjectModalProps {
+  project: Project
+  onClose: () => void
+}
+
+const projects: Project[] = [
   {
     id: 1,
     title: 'AI Fashion Assistant',
@@ -32,7 +60,7 @@ const projects = [
   // Add 6-8 more projects...
 ]
 
-const categories = [
+const categories: Category[] = [
   { id: 'all', name: 'All Projects' },
   { id: 'AI', name: 'AI/ML' },
   { id: 'Web', name: 'Web' },
@@ -40,8 +68,8 @@ const categories = [
   { id: 'Design', name: 'Design' }
 ]
 
-const ProjectCard = ({ project, onClick }) => {
-  const cardRef = useRef()
+const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
+  const cardRef = useRef<HTMLDivElement>(null)
   
   return (
     <motion.div
@@ -82,7 +110,7 @@ const ProjectCard = ({ project, onClick }) => {
   )
 }
 
-const ProjectModal = ({ project, onClose }) => {
+const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -95,7 +123,7 @@ const ProjectModal = ({ project, onClose }) => {
         initial={{ scale: 0.9 }}
         animate={{ scale: 1 }}
         exit={{ scale: 0.9 }}
-        onClick={e => e.stopPropagation()}
+        onClick={(e: React.MouseEvent) => e.stopPropagation()}
         className="bg-background/95 backdrop-blur-sm rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-white/10"
       >
         <div className="relative h-64 w-full">
@@ -190,8 +218,8 @@ const ProjectModal = ({ project, onClose }) => {
 }
 
 export default function Projects() {
-  const [activeCategory, setActiveCategory] = useState('all')
-  const [selectedProject, setSelectedProject] = useState(null)
+  const [activeCategory, setActiveCategory] = useState<string>('all')
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   
   const filteredProjects = activeCategory === 'all' 
     ? projects 
