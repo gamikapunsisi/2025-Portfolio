@@ -41,7 +41,7 @@ interface ProjectModalProps {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'Math LMS',
+    title: 'Maths Online LMS',
     description: 'Math LMS is a web application that allows students to learn and practice math problems. It is built with Laravel, PHP, and MySql.',
     tags: ['Laravel', 'PHP', 'MySql'],
     github: '#',
