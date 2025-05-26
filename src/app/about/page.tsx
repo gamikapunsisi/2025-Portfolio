@@ -1,12 +1,15 @@
-import { Metadata } from 'next'
-import Image from 'next/image'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'About Me',
-  description: 'Learn more about my background and skills',
-}
+import Image from 'next/image'
+import { useState, useEffect } from 'react'
+import { Spinner } from '@/components/ui/spinner'
 
 export default function About() {
+  const [imageError, setImageError] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => setMounted(true), [])
+
   return (
     <section id="about" className="py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,12 +19,33 @@ export default function About() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative w-64 h-64 mx-auto">
-            <Image
-              src="/profile.jpg" // Replace with your image
-              alt="Profile"
-              fill
-              className="rounded-full object-cover"
-            />
+            <div className="relative w-full h-full">
+              {mounted ? (
+                !imageError ? (
+                  <Image
+                  src="/profile.jpg"
+                  alt="Profile"
+                    width={256}
+                    height={256}
+                    priority
+                    className="rounded-full object-cover w-full h-full border-4 border-primary"
+                    style={{ objectFit: 'cover' }}
+                    onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                      console.error('Error loading image:', e);
+                      setImageError(true);
+                    }}
+                  />
+                ) : (
+                  <div className="w-full h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white text-4xl border-4 border-primary">
+                    GP
+                  </div>
+                )
+              ) : (
+                <div className="w-full h-full rounded-full bg-gray-200 animate-pulse flex items-center justify-center">
+                  <Spinner />
+                </div>
+              )}
+            </div>
           </div>
 
           <div>

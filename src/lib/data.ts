@@ -30,6 +30,16 @@ export const skills = [
     level: '65%'
   },
   {
+    name: 'Laravel',
+    icon: '🛠️',
+    level: '75%'
+  },
+  {
+    name: 'PHP',
+    icon: '🐘',
+    level: '80%'
+  },
+  {
     name: 'Docker',
     icon: '🐳',
     level: '70%'

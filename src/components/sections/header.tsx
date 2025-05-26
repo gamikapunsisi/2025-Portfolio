@@ -34,6 +34,7 @@ export function Header() {
     { name: 'About', href: 'about' },
     { name: 'Skills', href: 'skills' },
     { name: 'Projects', href: 'projects' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: 'contact' },
   ]
 
@@ -51,19 +52,31 @@ export function Header() {
         <div className="hidden md:flex items-center gap-6">
           <div className="flex gap-6">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={`/#${link.href}`}
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleNavClick(link.href)
-                }}
-                className={`transition-colors hover:text-primary ${
-                  pathname.includes(link.href) ? 'text-primary font-medium' : 'text-white/80'
-                }`}
-              >
-                {link.name}
-              </Link>
+              link.href.startsWith('/') ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`transition-colors hover:text-primary ${
+                    pathname === link.href ? 'text-primary font-medium' : 'text-white/80'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={`/#${link.href}`}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleNavClick(link.href)
+                  }}
+                  className={`transition-colors hover:text-primary ${
+                    pathname.includes(link.href) ? 'text-primary font-medium' : 'text-white/80'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )
             ))}
           </div>
           
@@ -101,19 +114,31 @@ export function Header() {
         <div className="md:hidden bg-background/95 backdrop-blur-sm border-t border-white/10">
           <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={`/#${link.href}`}
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleNavClick(link.href)
-                }}
-                className={`py-2 text-left transition-colors hover:text-primary ${
-                  pathname.includes(link.href) ? 'text-primary font-medium' : 'text-white/80'
-                }`}
-              >
-                {link.name}
-              </Link>
+              link.href.startsWith('/') ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`py-2 text-left transition-colors hover:text-primary ${
+                    pathname === link.href ? 'text-primary font-medium' : 'text-white/80'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={`/#${link.href}`}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleNavClick(link.href)
+                  }}
+                  className={`py-2 text-left transition-colors hover:text-primary ${
+                    pathname.includes(link.href) ? 'text-primary font-medium' : 'text-white/80'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )
             ))}
             <div className="pt-2 border-t border-white/10 mt-2">
               <Button

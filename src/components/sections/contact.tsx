@@ -18,15 +18,15 @@ export function Contact() {
           <div className="space-y-4">
             <div className="flex items-center">
               <span className="mr-4">📧</span>
-              <span>your.email@example.com</span>
+              <span>gamikadev@gmail.com</span>
             </div>
             <div className="flex items-center">
               <span className="mr-4">📱</span>
-              <span>+1 (123) 456-7890</span>
+              <span>+94 71 094 8851</span>
             </div>
             <div className="flex items-center">
               <span className="mr-4">🔗</span>
-              <a href="#" className="text-primary hover:underline">
+              <a href="https://www.linkedin.com/in/gamikapunsisi" className="text-primary hover:underline">
                 LinkedIn Profile
               </a>
             </div>
@@ -61,7 +61,7 @@ export function Contact() {
             </div>
             <button
               type="submit"
-              className="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition"
+              className="px-6 py-3 bg-white text-black rounded-lg hover:bg-white/90 transition"
             >
               Send Message
             </button>

@@ -12,10 +12,12 @@ export function About() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="relative w-64 h-64 mx-auto">
           <Image
-            src="/profile.jpg"
-            alt="Profile"
+                src="/profile.jpg"
+                alt="Profile"
             fill
             className="rounded-full object-cover"
+            priority
+            sizes="256px"
           />
         </div>
 
@@ -32,11 +34,11 @@ export function About() {
           <div className="flex flex-wrap gap-4">
             <div className="flex items-center text-white">
               <span className="mr-2">🎓</span>
-              <span>Computer Science Graduate</span>
+              <span>BSc(Hons) Computing</span>
             </div>
             <div className="flex items-center text-white">
               <span className="mr-2">📍</span>
-              <span>Your Location</span>
+              <span>Colombo,Sri Lanka</span>
             </div>
           </div>
         </div>

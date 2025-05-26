@@ -15,6 +15,12 @@ interface Project {
   image: string
   accentColor: string
   featured: boolean
+  features: string[]
+  impact: {
+    metric: string
+    value: string
+    label: string
+  }[]
 }
 
 interface Category {
@@ -35,29 +41,152 @@ interface ProjectModalProps {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'AI Fashion Assistant',
-    description: 'Computer vision app that recommends outfits based on your wardrobe with 92% accuracy',
-    tags: ['AI', 'Python', 'OpenCV'],
+    title: 'Math LMS',
+    description: 'Math LMS is a web application that allows students to learn and practice math problems. It is built with Laravel, PHP, and MySql.',
+    tags: ['Laravel', 'PHP', 'MySql'],
     github: '#',
-    demo: '#',
-    category: 'AI',
-    image: '/images/ai-fashion.jpg',
+    demo: 'https://mathsonline.lk',
+    category: 'Web',
+    image: '/math-lms.png',
     accentColor: '#8b5cf6',
-    featured: true
+    featured: true,
+    features: [
+      'Interactive math problem solving',
+      'Real-time progress tracking',
+      'Automated grading system & Live Classes',
+      'Student performance analytics & report',
+      'Payment Integration',
+      'Admin Dashboard'
+    ],
+    impact: [
+      { metric: '200+', value: '200+', label: 'Active Students' },
+      { metric: '85%', value: '85%', label: 'Completion Rate' },
+      { metric: '4.8', value: '4.8', label: 'User Rating' }
+    ]
   },
   {
     id: 2,
-    title: 'Sustainable E-Commerce',
-    description: 'Carbon-neutral marketplace with blockchain supply chain verification',
-    tags: ['React', 'Node.js', 'Web3'],
+    title: 'Online Bus Booking System',
+    description: 'Online Bus Booking is a web application that allows users to book buses for their trips. It is built with Node.js, Express, MongoDB, Typescript, Tailwind CSS, and Mongoose.',
+    tags: ['Node.js', 'Express', 'MongoDB', 'Typescript', 'Tailwind CSS', 'Mongoose'],
+    github: 'https://github.com/gamikapunsisi/E-Bus-Booking-System-AWS-Backend.git',
+    demo: 'https://ebusreserve.site',
+    category: 'Web',
+    image: '/bus-booking.jpg',
+    accentColor: '#10b981',
+    featured: true,
+    features: [
+      'User Authentication',
+      'Real-time Bus Seat Booking',
+      'Payment Integration',
+      'Admin Dashboard'
+    ],
+    impact: [
+      { metric: '1K+', value: '1K+', label: 'Daily Users' },
+      { metric: '40%', value: '40%', label: 'Carbon Reduction' },
+      { metric: '95%', value: '95%', label: 'Customer Satisfaction' }
+    ]
+  },
+  // Add 6-8 more projects...
+  {
+    id: 3,
+    title: 'Online Train Seat Booking System',
+    description: 'Online Train Seat Booking is a web application that allows users to book trains for their trips. It is built with Laravel, PHP, MySql.',
+    tags: ['Laravel', 'PHP', 'MySql'],
     github: '#',
     demo: '#',
     category: 'Web',
-    image: '/images/ecommerce.jpg',
+    image: '/train-booking.png',
     accentColor: '#10b981',
-    featured: true
+    featured: true,
+    features: [
+      'User Authentication',
+      'Real-time Train Seat Booking',
+      'Payment Integration',
+      'Admin Dashboard'
+    ],
+    impact: [
+      { metric: '1K+', value: '1K+', label: 'Daily Users' },
+      { metric: '40%', value: '40%', label: 'Real-time' },
+      { metric: '95%', value: '95%', label: 'Customer Satisfaction' }
+    ]
   },
-  // Add 6-8 more projects...
+  {
+    id: 4,
+    title: 'Vehicle Damage Detection System',
+    description: 'Vehicle Damage Detection System is a web application that allows users to detect damage in vehicles. It is built with Python, OpenCV, and Flask.',
+    tags: ['Python', 'OpenCV', 'Flask', 'TensorFlow', 'Keras', 'YOLO'],
+    github: 'https://github.com/gamikapunsisi/Vehical-Damage-Detection.git',
+    demo: '#',
+    category: 'AI',
+    image: '/damage-detection.jpg',
+    accentColor: '#10b981',
+    featured: true,
+    features: [
+      'Vehicle Damage Detection',
+      'Real-time Damage Detection',
+      'Image Processing',
+      'Object Detection'
+    ],
+    impact: [
+      { metric: '1K+', value: '1K+', label: 'Users' },
+      { metric: '40%', value: '40%', label: 'Accuracy' },
+      { metric: '95%', value: '95%', label: 'Speed' }
+    ]
+  },
+
+  {
+    id: 5,
+    title: 'Chatbot for Call Center',
+    description: 'Chatbot for Call Center is a web application that allows users to chat with a bot. It is built with Python, Rasa, and Flask.',
+    tags: ['Python', 'Rasa', 'Flask', 'TensorFlow','NLTK'],
+    github: 'https://github.com/gamikapunsisi/BOTZ.git',
+    demo: '#',
+    category: 'AI',
+    image: '/botz.jpg',
+    accentColor: '#10b981',
+    featured: true,
+    features: [
+      'Chatbot for Call Center Issue',
+      'Real-time Chat'
+    
+    
+    ],
+    impact: [
+      { metric: '1K+', value: '1K+', label: 'Users' },
+      { metric: '40%', value: '40%', label: 'Accuracy' },
+      { metric: '95%', value: '95%', label: 'Customer Satisfaction' }
+    ]
+  },
+
+  {
+    id: 6,
+    title: 'Hotel Reservation Website',
+    description: 'Hotel Reservation System is a web application that allows users to reserve hotels for their trips. It is built with Laravel, PHP, MySql.',
+    tags: ['Laravel', 'PHP', 'MySql'],
+    github: 'https://github.com/gamikapunsisi/Hotel_Reservation.git',
+    demo: '#',
+    category: 'Web',
+    image: '/hotel-reservation.jpg',
+    accentColor: '#10b981',
+    featured: true,
+    features: [
+      'Hotel Reservation',
+      'Real-time Room Reservation',
+      'Payment Integration'
+    
+    
+    ],
+    impact: [
+      { metric: '1K+', value: '1K+', label: 'Users' },
+      { metric: '40%', value: '40%', label: 'Rating' },
+      { metric: '95%', value: '95%', label: 'Customer Satisfaction' }
+    ]
+  },
+
+
+    // Add 6-8 more projects...
+
 ]
 
 const categories: Category[] = [
@@ -111,109 +240,140 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
 }
 
 const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
+  const [showFullImage, setShowFullImage] = useState(false);
+
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-      onClick={onClose}
-    >
+    <>
       <motion.div
-        initial={{ scale: 0.9 }}
-        animate={{ scale: 1 }}
-        exit={{ scale: 0.9 }}
-        onClick={(e: React.MouseEvent) => e.stopPropagation()}
-        className="bg-background/95 backdrop-blur-sm rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-white/10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        onClick={onClose}
       >
-        <div className="relative h-64 w-full">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover"
-          />
-          <button 
-            onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white"
-          >
-            <FiX />
-          </button>
-        </div>
-        
-        <div className="p-8">
-          <div className="flex flex-wrap gap-4 justify-between items-start">
-            <div>
-              <h2 className="text-3xl font-bold text-white">{project.title}</h2>
-              <p className="text-white/80 mt-2">{project.description}</p>
-            </div>
-            <div className="flex gap-3">
-              <a 
-                href={project.github}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/10 text-white hover:bg-white/20"
-              >
-                <FiGithub /> Code
-              </a>
-              {project.demo && (
+        <motion.div
+          initial={{ scale: 0.9 }}
+          animate={{ scale: 1 }}
+          exit={{ scale: 0.9 }}
+          onClick={(e: React.MouseEvent) => e.stopPropagation()}
+          className="bg-background/95 backdrop-blur-sm rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-white/10"
+        >
+          <div className="relative h-64 w-full cursor-pointer" onClick={() => setShowFullImage(true)}>
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover"
+            />
+            <button 
+              onClick={onClose}
+              className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white"
+            >
+              <FiX />
+            </button>
+          </div>
+          
+          <div className="p-8">
+            <div className="flex flex-wrap gap-4 justify-between items-start">
+              <div>
+                <h2 className="text-3xl font-bold text-white">{project.title}</h2>
+                <p className="text-white/80 mt-2">{project.description}</p>
+              </div>
+              <div className="flex gap-3">
                 <a 
-                  href={project.demo}
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-white hover:bg-primary/90"
+                  href={project.github}
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/10 text-white hover:bg-white/20"
                 >
-                  <FiExternalLink /> Live Demo
+                  <FiGithub /> Code
                 </a>
-              )}
+                {project.demo && (
+                  <a 
+                    href={project.demo}
+                    className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white/10 text-white hover:bg-white/20"
+                  >
+                    <FiExternalLink /> Live Demo
+                  </a>
+                )}
+              </div>
             </div>
-          </div>
-          
-          <div className="mt-8">
-            <h3 className="font-semibold text-lg mb-4 text-white">Technologies Used</h3>
-            <div className="flex flex-wrap gap-3">
-              {project.tags.map(tag => (
-                <span 
-                  key={tag}
-                  className="px-4 py-2 rounded-full text-sm bg-white/10 text-white"
-                >
-                  {tag}
-                </span>
-              ))}
+            
+            <div className="mt-8">
+              <h3 className="font-semibold text-lg mb-4 text-white">Technologies Used</h3>
+              <div className="flex flex-wrap gap-3">
+                {project.tags.map(tag => (
+                  <span 
+                    key={tag}
+                    className="px-4 py-2 rounded-full text-sm bg-white/10 text-white"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-          
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="font-semibold text-lg mb-3 text-white">Key Features</h3>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 w-2 h-2 rounded-full bg-primary" />
-                  <span className="text-white/80">Real-time outfit recommendations</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 w-2 h-2 rounded-full bg-primary" />
-                  <span className="text-white/80">92% accuracy rate</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 w-2 h-2 rounded-full bg-primary" />
-                  <span className="text-white/80">Integration with major retailers</span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold text-lg mb-3 text-white">Project Impact</h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-xl bg-white/5">
-                  <div className="text-2xl font-bold text-primary">10K+</div>
-                  <div className="text-sm text-white/60">Daily Users</div>
-                </div>
-                <div className="p-4 rounded-xl bg-white/5">
-                  <div className="text-2xl font-bold text-primary">40%</div>
-                  <div className="text-sm text-white/60">Conversion Boost</div>
+            
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-semibold text-lg mb-3 text-white">Key Features</h3>
+                <ul className="space-y-2">
+                  {project.features.map((feature, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="mt-1 w-2 h-2 rounded-full bg-primary" />
+                      <span className="text-white/80">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg mb-3 text-white">Project Impact</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {project.impact.map((item, index) => (
+                    <div key={index} className="p-4 rounded-xl bg-white/5">
+                      <div className="text-2xl font-bold text-primary">{item.value}</div>
+                      <div className="text-sm text-white/60">{item.label}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
-    </motion.div>
+
+      {/* Full Image Modal */}
+      <AnimatePresence>
+        {showFullImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/90 z-[60] flex items-center justify-center p-4"
+            onClick={() => setShowFullImage(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              onClick={(e: React.MouseEvent) => e.stopPropagation()}
+              className="relative max-w-[90vw] max-h-[90vh]"
+            >
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={1200}
+                height={800}
+                className="object-contain max-h-[90vh]"
+              />
+              <button 
+                onClick={() => setShowFullImage(false)}
+                className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white"
+              >
+                <FiX />
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   )
 }
 
@@ -256,7 +416,7 @@ export default function Projects() {
               onClick={() => setActiveCategory(category.id)}
               className={`px-5 py-2 rounded-full transition-all ${
                 activeCategory === category.id
-                  ? 'bg-primary text-white'
+                  ? 'bg-primary text-black'
                   : 'bg-white/10 text-white/80 hover:bg-white/20'
               }`}
             >
@@ -345,7 +505,7 @@ export default function Projects() {
           </p>
           <a
             href="/contact"
-            className="inline-block px-8 py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors"
+            className="inline-block px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-white/90 transition-colors"
           >
             Let's Collaborate
           </a>

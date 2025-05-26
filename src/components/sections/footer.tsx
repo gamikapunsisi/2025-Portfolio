@@ -6,14 +6,14 @@ export function Footer() {
             © {new Date().getFullYear()} Gamika Punsisi. All rights reserved.
           </p>
           <div className="flex justify-center space-x-6 mt-4">
-            <a href="#" className="text-white/80 hover:text-white transition-colors">
+            <a href="https://github.com/gamikapunsisi" className="text-white/80 hover:text-white transition-colors">
               GitHub
             </a>
-            <a href="#" className="text-white/80 hover:text-white transition-colors">
+            <a href="https://www.linkedin.com/in/gamikapunsisi" className="text-white/80 hover:text-white transition-colors">
               LinkedIn
             </a>
-            <a href="#" className="text-white/80 hover:text-white transition-colors">
-              Twitter
+            <a href="https://medium.com/@gamikapunsisi" className="text-white/80 hover:text-white transition-colors">
+              Medium
             </a>
           </div>
         </div>
